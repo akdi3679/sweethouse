@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-raspberry: #C2496B;
+  --color-raspberry-deep: #A63A57;
+  --color-pink: #C2496B;
+  --color-blush: #E88B9C;
+  --color-petal: #F7D6DE;
+  --color-cream: #FFF7F9;
+  --color-milk: #FFFBFC;
+  --color-sage: #8FA98F;
+  --color-cocoa: #46202E;
+  --color-taupe: #9A7684;
+  --font-display: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-poppins), "Poppins", system-ui, sans-serif;
+  --font-script: var(--font-vibes), "Great Vibes", cursive;
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-cream font-sans text-cocoa antialiased; }
+::selection { background: var(--color-raspberry); color: var(--color-cream); }
+
+.label { @apply text-[11px] font-semibold uppercase tracking-[0.28em]; }
+.chip { @apply inline-flex items-center gap-2 rounded-full bg-petal px-4 py-2 text-sm font-semibold text-raspberry-deep border border-raspberry/20; }
+
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[12px] font-semibold uppercase tracking-[0.18em] transition-all duration-300; }
+.btn-primary { @apply bg-raspberry text-cream hover:-translate-y-0.5 hover:bg-raspberry-deep shadow-[0_10px_30px_-12px_rgba(194,73,107,0.55)]; }
+.btn-ghost { @apply border border-raspberry/30 text-raspberry hover:border-raspberry hover:bg-raspberry/10; }
+.btn-cream { @apply bg-cream text-raspberry hover:-translate-y-0.5 hover:bg-petal; }
+.btn-light { @apply border border-cream/60 text-cream hover:bg-cream/10; }
+
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s cubic-bezier(.22,.61,.21,1), transform .9s cubic-bezier(.22,.61,.21,1); }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+.card-img { overflow: hidden; }
+.card-img img { transition: transform 1.2s cubic-bezier(.22,.61,.21,1); }
+.group:hover .card-img img { transform: scale(1.06); }
+
+details.faq summary::-webkit-details-marker { display: none; }
+details.faq[open] .faq-icon { transform: rotate(45deg); }
+
+
+
+
+/* Floating flowers (their emoji language) */
+
+/* Header mini-logo, recreated from theirs */
+
+.ring-dark { position: absolute; border-radius: 50%; border: 1.5px solid rgba(194, 73, 107, 0.35); pointer-events: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
