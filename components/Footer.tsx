@@ -18,19 +18,20 @@ export default function Footer() {
           </p>
         </div>
 
-        <nav className="flex flex-col gap-3" aria-label="Pied de page">
-          {navigation.map((n) => (
-            <a key={n.href} href={n.href} className="text-sm text-cream/80 underline-offset-4 transition-colors hover:text-blush hover:underline">
-              {n.label}
-            </a>
-          ))}
-        </nav>
+        <nav className="flex flex-col items-start gap-3" aria-label="Pied de page">
+  {navigation.map((n) => (
+    <a key={n.href} href={n.href} className="w-fit text-sm text-cream/80 underline-offset-4 transition-colors hover:text-blush hover:underline">
+      {n.label}
+    </a>
+  ))}
+</nav>
 
         <div className="text-sm text-cream/70">
           <a href={brandData.phoneHref} className="block font-medium text-cream transition-colors hover:text-blush">
             {brandData.phone}
           </a>
-          <div className="mt-4 flex flex-col gap-3">
+          <div className="mt-4 flex flex-col items-start gap-3">
+
             <a href={brandData.instagram.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 transition-colors hover:text-blush">
              <InstagramIcon className="h-4 w-4 shrink-0" /> {brandData.instagram.handle}
             </a>
